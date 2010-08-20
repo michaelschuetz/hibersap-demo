@@ -4,7 +4,7 @@ Accessing SAP system with Hibersap/JCo
 
 Hibersap simplifies use of JCo by providing handy set of annotations. Sample code uses default SAP fligth demo application.
 
-htpp://hibersap.org
+http://hibersap.org
 
 
 Get started:
