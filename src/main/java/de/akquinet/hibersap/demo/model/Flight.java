@@ -9,26 +9,58 @@ import org.hibersap.annotations.Parameter;
  */
 @BapiStructure
 public class Flight {
-    @Parameter("CITYFROM")
-    private String cityFrom;
+    @Parameter("CARRID")
+    private String carrId;
 
-    @Parameter("CITYTO")
-    private String cityTo;
+    @Parameter("AIRPFROM")
+    private String airpFrom;
 
-    public String getCityFrom() {
-        return cityFrom;
+    @Parameter("AIRPTO")
+    private String airpTo;
+
+    @Parameter("SEATSMAX")
+    private Integer seatsMax;
+
+    @Parameter("SEATSOCC")
+    private Integer seatsOcc;
+
+    public String getCarrId() {
+        return carrId;
     }
 
-    public void setCityFrom(String cityFrom) {
-        this.cityFrom = cityFrom;
+    public void setCarrId(String carrId) {
+        this.carrId = carrId;
     }
 
-    public String getCityTo() {
-        return cityTo;
+    public String getAirpFrom() {
+        return airpFrom;
     }
 
-    public void setCityTo(String cityTo) {
-        this.cityTo = cityTo;
+    public void setAirpFrom(String airpFrom) {
+        this.airpFrom = airpFrom;
     }
 
+    public String getAirpTo() {
+        return airpTo;
+    }
+
+    public void setAirpTo(String airpTo) {
+        this.airpTo = airpTo;
+    }
+
+    public Integer getSeatsMax() {
+        return seatsMax;
+    }
+
+    public void setSeatsMax(Integer seatsMax) {
+        this.seatsMax = seatsMax;
+    }
+
+    public Integer getSeatsOcc() {
+        return seatsOcc;
+    }
+
+    public void setSeatsOcc(Integer seatsOcc) {
+        this.seatsOcc = seatsOcc;
+    }
 }

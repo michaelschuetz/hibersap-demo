@@ -31,12 +31,11 @@ public class SapFlightDao implements FlightDao {
      */
     public FlightInfo findFlightInfo(FlightSearchFields fields) {
         LOG.info("Looking for flights data in SAP...");
-        FlightInfo bapi = new FlightInfo(fields.getFromCity());
+        FlightInfo bapi = new FlightInfo(fields.getFromCountryKey(), fields.getFromCity(), fields.getToCountryKey(), fields.getToCity());
         final Session session = sessionManager.openSession();
         try {
-            bapi.setFromCity(fields.getFromCity());
             session.execute(bapi);
-            LOG.info(String.format("%d customer(s) read from SAP", bapi.getFlights().size()));
+            LOG.info(String.format("%d flight(s) read from SAP", bapi.getFlights().size()));
         }
         finally {
             session.close();

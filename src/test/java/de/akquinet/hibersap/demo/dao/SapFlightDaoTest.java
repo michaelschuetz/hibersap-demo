@@ -35,12 +35,19 @@ public class SapFlightDaoTest {
     @Test
     public void testGetCustomerData() throws Exception {
         final SessionManager sessionManager = new AnnotationConfiguration().buildSessionManager();
-       LOG.info("SMConfig: " + sessionManager.getConfig());
+        LOG.info("SMConfig: " + sessionManager.getConfig());
 
-        final FlightSearchFields searchFields = new FlightSearchFields("*");
+        final FlightSearchFields searchFields = new FlightSearchFields("DE", "FRANKFURT", "DE", "BERLIN");
 
         final List<Flight> list = dao.findFlightInfo(searchFields).getFlights();
 
-        assertEquals("The flight application in SAP doesn't seem to be initialized. Run program SAPBC_BOR_SFLIGHT in transaction SE38", 1, list.size());
+        assertEquals("The flight application in SAP doesn't seem to be initialized. Run program SAPBC_BOR_SFLIGHT in transaction SE38", 2, list.size());
+
+        Flight flight1 = list.get(0);
+        Flight flight2 = list.get(1);
+        assertEquals("FRA", flight1.getAirpFrom());
+        assertEquals(Integer.valueOf(191), flight1.getSeatsOcc());
+        assertEquals("SXF", flight2.getAirpTo());
+        assertEquals(Integer.valueOf(207), flight2.getSeatsOcc());
     }
 }
