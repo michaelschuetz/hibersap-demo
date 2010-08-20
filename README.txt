@@ -10,6 +10,15 @@ htpp://hibersap.org
 Get started:
 * Make sure Maven2 or above is installed on your computer.
   * If not, download from http://maven.apache.org and install.
+
+* Add this repository to your local Maven settings / POM configuration:
+       <repository>
+            <id>repository.hibersap</id>
+            <name>Hibersap Repository for Maven</name>
+            <url>
+                http://hibersap.svn.sourceforge.net/viewvc/hibersap/m2repo
+            </url>
+        </repository>
   
 * Install the JCo jar to your local Maven repository. You'll find jar and native libs here: \native-libs 
   > mvn install:install-file -DgroupId=com.sap -DartifactId=sap-jco -Dversion=3.0.5 -Dpackaging=jar -Dfile=sapjco3.jar
