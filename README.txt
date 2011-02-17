@@ -1,4 +1,3 @@
-
 Accessing SAP system with Hibersap/JCo
 ######################################
 
@@ -21,6 +20,7 @@ Get started:
         </repository>
   
 * Install the JCo jar to your local Maven repository. You'll find jar and native libs here: \native-libs 
+  Native libs has been removed due to legal requirements.
   > mvn install:install-file -DgroupId=com.sap -DartifactId=sap-jco -Dversion=3.0.5 -Dpackaging=jar -Dfile=sapjco3.jar
 
 * Install native lib for your os (supported out of the box: Windows64bit, Mac64bit. Otherwise download from http://service.sap.com/connectors)  
